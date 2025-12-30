@@ -6,7 +6,7 @@
     // x start of a substring
     // starts at index 0(outer loop)
     // innner loop ending pos of the substring
-    // 
+    
 
 function consecutiveSubstrings(string) {
   const result = []; 

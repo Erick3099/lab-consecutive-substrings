@@ -1,2 +1,59 @@
-Please add your pseudocode to this file
-And a written explanation of your solution
+ add your pseudocode to this file
+/*
+.func takes 1 para (string)
+  return all consecutive....
+     empty array
+     loop controls starting pos of each substring
+    x start of a substring
+     starts at index 0(outer loop)
+    innner loop ending pos of the substring
+    1.create empty array to store substring
+    2. Loop through the string using an index x as the starting position
+3. For each starting position x:
+   a. Loop through the string again using index y as the ending position
+   b. Extract a substring from index x up to index y
+   c. Add the substring to the result array
+4. After all loops finish, return the result array
+
+/*
+function consecutiveSubstrings(string) {
+  const result = []; 
+  for (let x = 0; x < string.length; x++) { 
+    // let temp =""
+    //  for (let y = x; y < string.length; y++) {
+    //   temp += string[y];
+    //   result.push(temp);
+    for (let y = x + 1; y <= string.length; y++) {
+      result.push(string.substring(x, y));
+    }
+  }
+  return result;
+}
+if (require.main === module) {
+  console.log("in return: ['a', 'ab', 'abc', 'b', 'bc', 'c']");
+  console.log("=>", consecutiveSubstrings('abc'));
+
+  console.log("");
+
+  console.log("in return: ['a']");
+  console.log("=>", consecutiveSubstrings('a'));
+}
+
+module.exports = consecutiveSubstrings;
+
+
+
+
+ The task is to generate all consecutive substring from a specific string where the substring contain adjacent character from the original string and be returned in the order they apper.
+it uses two nested loops to navigate through the string where the outer one selects the starting index ,while the inner loop selects the ending index.
+ Explanation.
+
+ An empty array is created where the results are stored. The outer loop moves through each character in the string and treats it as the starting position of a substring
+ while the inner loop moves forward from that position to the end position resulting to consecutive substrings where generated substring are added to the final array in their specific order.
+ afterwards the array is returned.,
+
+  TIME COMPLEXITY
+  O(n^2) where n is the length of the input string 
+
+
+
